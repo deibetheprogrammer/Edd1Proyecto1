@@ -58,3 +58,47 @@ int main()
         }
     }
 }
+
+//Trabajar con listas
+void listas() {
+
+    bool loop = true;
+
+    while(loop) {
+
+        cout << "*** MENU: TRABAJAR CON LISTAS ***" << endl
+            << "----------------------" << endl
+            << " [1] Trabajar con ArrayList" << endl
+            << " [2] Trabajar con LinkedList" << endl
+            << " [3] Regresar al menu principal" << endl
+            << "Su eleccion: ";
+    
+        int choice = 0;
+        cin >> choice;
+
+        while (!cin || (choice < 1 || choice > 3))
+        {
+            cin.clear();
+            cin.ignore(100,'\n');
+            cout << "Por favor escoja un numero valido";
+            cin >> choice;
+        }
+    
+        switch (choice) {
+            case 1: {
+                
+               break;
+            }
+            case 2: {
+                
+                break;
+            }
+            case 3: {
+                loop = false;
+                break;
+            }
+        }
+
+    }
+
+}
