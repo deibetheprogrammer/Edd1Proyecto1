@@ -1,5 +1,6 @@
-// my_class.h
-#pragma once
+#ifndef ALUMNO_H
+#define ALUMNO_H
+
 #include "Object.hpp"
 
 #include <string>
@@ -21,3 +22,4 @@ class Alumno : public Object
         string nombre;
 };
 
+#endif
