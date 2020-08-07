@@ -12,9 +12,9 @@ class Object
         Object();
 
         //METODOS
-        bool equals(Object*);
+        virtual bool equals(Object*) = 0;
 
-        string toString();
+        virtual string toString() = 0;
 
         //DESTRUCTOR
         ~Object();
