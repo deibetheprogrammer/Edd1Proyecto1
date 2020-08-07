@@ -1,7 +1,7 @@
 #ifndef TDAQUEUE_H
 #define TDAQUEUE_H
 
-#import "Object.h"
+#include "Object.hpp"
 
 class TDAQueue
 {
