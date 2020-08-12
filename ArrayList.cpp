@@ -15,13 +15,30 @@ ArrayList::ArrayList()
 bool ArrayList::inserta(int p,Object* x){
 
 	//primero validar p en el rango (1 hasta n +1)
-    // - Se asume que p ya viene validado
+    if(p < 1 || p > (n+1)) {
+        cout << "Posicion invalida, por favor ingrese una posicion"
+             << "entre 1 y " << (n+1) << endl;
+        return false;
+    }
 	//si el rango es valido 
+	//determinar los corrimientos necesarios y realizarlos
+    int corrimientos = (n+1) - p;
+    for (size_t i = 0; i < corrimientos; i++)
+    {
+        Object* temp = array[n-i];
+        delete array[n-i];
+        array[n-i] = nullptr;
 
-		//determinar los corrimientos necesarios y realizarlos
-		//insertar el valor en casilla correspondiente del arreglo
-		//incrementar n	
-		//return true
+        array[n-i+1] = temp;
+        delete temp;
+        temp = nullptr;
+    }
+	//insertar el valor en casilla correspondiente del arreglo
+    array[p-1] = x;
+	//incrementar n	
+    n++;
+	//return true
+    return true;
 	//else
 	     //return false
 }
