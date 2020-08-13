@@ -37,42 +37,86 @@ bool ArrayList::inserta(int p,Object* x){
 }
 
 Object* ArrayList::suprime(int p){
-	//validar p en el rango ( 1 hasta n )
-		//determinar los corrimientos necesarios y realizarlos
-		//decrementar n
-		//retornar lo que estaba en la casilla p
+	//validar p en el rango (1 hasta n)
+	if(p < 1 || p > n) {
+        cout << "Posicion invalida, por favor ingrese una posicion"
+             << "entre 1 y " << (n) << endl;
+        return nullptr;
+    }
+
+	Object* temp = array[p-1];
+	//determinar los corrimientos necesarios y realizarlos
+	for (size_t i = (p-1); i < (n-1); i--)
+    {
+        array[i] = array[i+1];
+		delete array[i+1];
+		array[i+1] = nullptr;
+    }
+	
+	//decrementar n
+	n--;
+	//retornar lo que estaba en la casilla p
+	return temp;
 	//else
-		//return null
+	//return null
 }
 
 Object* ArrayList::recupera(int p){
 	//validar p en el rango ( 1 hasta n )
-		//retornar el valor del objeto que corresponde a p en el array
+	if(p < 1 || p > n) {
+        cout << "Posicion invalida, por favor ingrese una posicion"
+             << "entre 1 y " << n << endl;
+        return nullptr;
+    }
+	//retornar el valor del objeto que corresponde a p en el array
+	return array[p-1];
 	//else
 		// return null		
 }
 
 Object* ArrayList::siguiente(int p){
-	return recupera(p+1);
+	if(p < 1 || p > (n-1)) {
+        cout << "Posicion invalida, por favor ingrese una posicion"
+             << "entre 1 y " << (n-1) << endl;
+        return nullptr;
+    }
+	return recupera(p);
 }
 
 Object* ArrayList::anterior(int p){
-	return recupera(p-1);
+	if(p < 2 || p > n) {
+        cout << "Posicion invalida, por favor ingrese una posicion"
+             << "entre 1 y " << (n) << endl;
+        return nullptr;
+    }
 }
 
 int ArrayList::localiza(Object* x){
 	//en un ciclo de i=1 a n
-		//si la casilla del arreglo es igual (equals) a x entonces
-		//return i
+	//si la casilla del arreglo es igual (equals) a x entonces
+	//return i
+	for (size_t i = 0; i < n; i++)
+	{
+		if (x->equals(array[i]))
+		{
+			return i;
+		}
 		
-	//si sale del ciclo y no retornÛ
-		//return -1;
+	}
+	//si sale del ciclo y no retorna
+	//return -1;
+	return -1;
 }
 
 
 void ArrayList::imprime(){
 	//en un ciclo desde 1 hasta n
 	//imprime en pantalla el contenido de las n casillas del arreglo
+	for (size_t i = 0; i < n; i++)
+	{
+		array[i]->toString();
+	}
+	
 }
 
 bool ArrayList::vacia(){
@@ -87,9 +131,10 @@ Object* ArrayList::primero(){
 }
 
 void ArrayList::anula(){
-	for(int i = 0 ; i < n;i++ )
+	for(int i = 0 ; i < n;i++ ) {
 		delete array[i];
-	
+		array[i] = nullptr;
+	}
 	n = 0;
 }
 
@@ -97,10 +142,13 @@ void ArrayList::anula(){
 
 ArrayList::~ArrayList()
 {
-	for(int i = 0 ; i < n;i++ )
+	for(int i = 0 ; i < n;i++ ) {
 		delete array[i];
+		array[i] = nullptr;
+	}
 		
 	delete[] array;
+	array = nullptr;
 }
 
 
