@@ -15,7 +15,7 @@ class Alumno : public Object
         Alumno(string,string);
 
         ~Alumno();
-    
+        
     private:
 
         string cuenta;
