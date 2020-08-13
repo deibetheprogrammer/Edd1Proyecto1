@@ -46,13 +46,11 @@ Object* ArrayList::suprime(int p){
 
 	Object* temp = array[p-1];
 	//determinar los corrimientos necesarios y realizarlos
-	for (size_t i = (p-1); i < (n-1); i--)
+	for (size_t i = (p-1); i < (n-1); i++)
     {
         array[i] = array[i+1];
-		delete array[i+1];
-		array[i+1] = nullptr;
     }
-	
+	array[n-1] = nullptr; 
 	//decrementar n
 	n--;
 	//retornar lo que estaba en la casilla p
@@ -75,20 +73,21 @@ Object* ArrayList::recupera(int p){
 }
 
 Object* ArrayList::siguiente(int p){
-	if(p < 1 || p > (n-1)) {
+	if((p+1) < 1 || (p+1) > (n-1)) {
         cout << "Posicion invalida, por favor ingrese una posicion"
              << "entre 1 y " << (n-1) << endl;
         return nullptr;
     }
-	return recupera(p);
+	return recupera((p+1));
 }
 
 Object* ArrayList::anterior(int p){
-	if(p < 2 || p > n) {
+	if((p-1) < 1 || (p-1) > n) {
         cout << "Posicion invalida, por favor ingrese una posicion"
-             << "entre 1 y " << (n) << endl;
+             << "entre 1 y " << (n-1) << endl;
         return nullptr;
     }
+	return recupera((p-1));
 }
 
 int ArrayList::localiza(Object* x){
@@ -99,7 +98,7 @@ int ArrayList::localiza(Object* x){
 	{
 		if (x->equals(array[i]))
 		{
-			return i;
+			return (i+1);
 		}
 		
 	}
@@ -114,7 +113,7 @@ void ArrayList::imprime(){
 	//imprime en pantalla el contenido de las n casillas del arreglo
 	for (size_t i = 0; i < n; i++)
 	{
-		array[i]->toString();
+		cout << array[i]->toString() << endl;
 	}
 	
 }
@@ -141,12 +140,7 @@ void ArrayList::anula(){
 
 
 ArrayList::~ArrayList()
-{
-	for(int i = 0 ; i < n;i++ ) {
-		delete array[i];
-		array[i] = nullptr;
-	}
-		
+{	
 	delete[] array;
 	array = nullptr;
 }
