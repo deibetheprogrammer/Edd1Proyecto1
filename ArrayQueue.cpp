@@ -84,7 +84,7 @@ void ArrayQueue::anula(){
 }
 
 bool ArrayQueue::vacia(){
-	return front == final;
+	return front == final && array[front] == nullptr;
 }
 
 void ArrayQueue::imprimir(){
