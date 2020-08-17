@@ -27,19 +27,9 @@ void ArrayQueue::poneEnCola(Object* x){
 	//insertar x en la posici�n final
 	if (!(final == (capacity-1) && front == 0) || final == (front-1))
 	{
-		if(final == (capacity-1)) {
-			array[0] == x;
-		} else {
-			array[final+1] = x;
-		}
+		final = (final+1) % capacity;
+		array[final] = x;
 
-		//incrementar final (calcular desbordamiento si existe)
-		if (final == (capacity-1)) {
-			final = 0;
-		}
-		else {
-			final++;
-		}
 		//incrementar auxiliar
 		auxiliar++;
 	}
@@ -59,7 +49,7 @@ Object* ArrayQueue::quitaDeCola(){
 	if (!vacia()) {
 		Object* temp = array[front];
 		array[front] = nullptr;
-		front++;
+		front = (++front) % capacity;
 		auxiliar--;
 		return temp;
 	}
@@ -80,7 +70,7 @@ void ArrayQueue::anula(){
 		delete temp;
 	}
 	//frente = final = 0
-	front,final = 0;
+	front = final = 0;
 }
 
 bool ArrayQueue::vacia(){
@@ -90,7 +80,7 @@ bool ArrayQueue::vacia(){
 void ArrayQueue::imprimir(){
 		//iterar las casillas desde frente hasta final e imprimir en pantalla 
 		//cada elemento
-		for (size_t i = front; i < (final+1); i++)
+		for (size_t i = front; i <= final; i = (++i) % capacity)
 		{
 			cout << array[i]->toString();
 		}
