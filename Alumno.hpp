@@ -12,7 +12,7 @@ class Alumno : public Object
     public:
         Alumno();
 
-        Alumno(string,string);
+        Alumno(string nombre,string cuenta);
 
         ~Alumno();
         
