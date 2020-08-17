@@ -61,15 +61,14 @@ Object* ArrayStack::top() {
 }
 
 void ArrayStack::clear(){
-	for(int i = 0 ; i < tope;i++ )
+	for(int i = 0 ; i < tope;i++ ) {
 		delete array[i];
+		array[i] = nullptr;
+	}
 	tope = 0;
 }
 
 ArrayStack::~ArrayStack()
 {
-	for(int i = 0 ; i < tope;i++ )
-		delete array[i];
-		
 	delete[] array;
 }
