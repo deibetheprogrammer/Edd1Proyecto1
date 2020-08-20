@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Alumno.hpp"
+#include "Simbolo.hpp"
 #include "ArrayList.hpp"
 #include "ArrayQueue.hpp"
 #include "ArrayStack.hpp"
@@ -204,4 +205,111 @@ void colas() {
             }
         }
     }
+}
+
+//Trabajar con ArrayList
+void arraylist() {
+
+    ArrayList* arrayL = new ArrayList();
+
+    bool loop = true;
+
+    while(loop) {
+
+        cout << "*** MENU: TRABAJAR CON ARRAYLIST ***" << endl
+            << "----------------------" << endl
+            << " [1] Inserta" << endl
+            << " [2] Suprime" << endl
+            << " [3] Anula" << endl
+            << " [4] Recupera" << endl
+            << " [5] Siguiente" << endl
+            << " [6] Anterior" << endl
+            << " [7] Vacia" << endl
+            << " [8] Imprime" << endl
+            << " [9] Primero" << endl
+            << " [10] Localiza" << endl
+            << " [11] Regresar al menu de Listas" << endl
+            << "Su eleccion: ";
+    
+        int choice = 0;
+        cin >> choice;
+
+        while (!cin || (choice < 1 || choice > 11))
+        {
+            cin.clear();
+            cin.ignore(100,'\n');
+            cout << "Por favor escoja un numero valido";
+            cin >> choice;
+        }
+    
+        switch (choice) {
+            case 1: {
+
+                cout << "Que nombre tiene el nuevo alumno ?: ";
+                string nombre;
+                cin >> nombre;
+
+                cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
+                string cuenta;
+                cin >> cuenta;
+
+                cout << "En que posicion desea insertar al alumno ?: ";
+                int pos;
+                cin >> pos;
+
+                while (!cin) {
+                    cin.clear();
+                    cin.ignore(100,'\n');
+                    cout << "Ingrese un numero por favor";
+                    cin >> pos;
+                }
+
+                arrayL->inserta(pos,new Alumno(nombre,cuenta));
+                
+               break;
+            }
+            case 2: {
+                
+                break;
+            }
+            case 3: {
+
+                break;
+            }
+            case 4: {
+
+                break;
+            }
+            case 5: {
+
+                break;
+            }
+            case 6: {
+
+                break;
+            }
+            case 7: {
+
+                break;
+            }
+            case 8: {
+
+                break;
+            }
+            case 9: {
+
+                break;
+            }
+            case 10: {
+
+                break;
+            }
+            case 11: {
+                loop = false;
+                break;
+            }
+        }
+
+    }
+
 }
