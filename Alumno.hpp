@@ -14,6 +14,10 @@ class Alumno : public Object
 
         Alumno(string nombre,string cuenta);
 
+        string toString();
+
+        bool equals(Object* x);
+
         ~Alumno();
         
     private:
