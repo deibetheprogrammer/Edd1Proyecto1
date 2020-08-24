@@ -80,7 +80,7 @@ bool ArrayQueue::vacia(){
 void ArrayQueue::imprimir(){
 		//iterar las casillas desde frente hasta final e imprimir en pantalla 
 		//cada elemento
-		for (size_t i = front; i <= final; i = (++i) % capacity)
+		for (int i = front; i <= final; i = (++i) % capacity)
 		{
 			cout << array[i]->toString();
 		}
