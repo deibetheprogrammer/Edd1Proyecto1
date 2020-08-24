@@ -22,7 +22,7 @@ bool ArrayList::inserta(int p,Object* x){
     }
 	//si el rango es valido 
 	//determinar los corrimientos necesarios y realizarlos
-    for (size_t i = (n-1); i >= p-1; i--)
+    for (int i = (n-1); i >= p-1; i--)
     {
         array[i+1] = array[i];
     }
@@ -46,7 +46,7 @@ Object* ArrayList::suprime(int p){
 
 	Object* temp = array[p-1];
 	//determinar los corrimientos necesarios y realizarlos
-	for (size_t i = (p-1); i < (n-1); i++)
+	for (int i = (p-1); i < (n-1); i++)
     {
         array[i] = array[i+1];
     }
@@ -94,7 +94,7 @@ int ArrayList::localiza(Object* x){
 	//en un ciclo de i=1 a n
 	//si la casilla del arreglo es igual (equals) a x entonces
 	//return i
-	for (size_t i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (x->equals(array[i]))
 		{
@@ -112,7 +112,7 @@ void ArrayList::imprime(){
 	//en un ciclo desde 1 hasta n
 	//imprime en pantalla el contenido de las n casillas del arreglo
 	int pos = 1;
-	for (size_t i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 	{
 		cout << '(' << pos << "): " << array[i]->toString() << endl;
 		pos++;
