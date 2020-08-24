@@ -14,9 +14,9 @@ class Alumno : public Object
 
         Alumno(string nombre,string cuenta);
 
-        string toString();
+        virtual string toString();
 
-        bool equals(Object* x);
+        virtual bool equals(Object* x);
 
         ~Alumno();
         
