@@ -2,7 +2,7 @@
 
 LnkedStack::LnkedStack()
 {
-	tope = NULL;
+	tope = nullptr;
 }
 
 LnkedStack::~LnkedStack()
@@ -21,12 +21,12 @@ void LnkedStack::print(){
 void LnkedStack::clear(){
 	//si no est� vac�a
 		delete tope;
-		tope=NULL;
+		tope = nullptr;
 }
 
 
 bool LnkedStack::isEmpty(){
-	return top == NULL;
+	return tope == nullptr;
 }
 
 Object* LnkedStack::top(){
@@ -34,6 +34,7 @@ Object* LnkedStack::top(){
 		//return null
 	//else
 		//return top.data
+	return nullptr;
 }
 
 Object* LnkedStack::pop(){
@@ -45,10 +46,10 @@ Object* LnkedStack::pop(){
 		//top.ant = null
 		//temp.sig = null
 		//retValue = temp.data
-		//temp.data = NULL
+		//temp.data = nullptr
 		//delete temp
 		//return reValue
-		
+	return nullptr;
 } 
 
 void LnkedStack::push(Object* x){
