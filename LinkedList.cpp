@@ -2,15 +2,15 @@
 
 LinkedList::LinkedList()
 {
-	inicio = NULL;
+	inicio = nullptr;
 	n = 0;
 }
 
 Object* LinkedList::primero(){
-	if (inicio) //si inicio no es null
+	if (inicio) //si inicio no es nullptr
 		return inicio->getData();
 	else 
-		return NULL;
+		return nullptr;
 }
 
 void LinkedList::imprime(){
@@ -31,6 +31,7 @@ int LinkedList::localiza(Object* x){
 			//temp = temp.sig
 			
 	//return -1 --- el elemento no se encontr� en la lista
+	return 0;
 }
 
 //si  libera en c++ el contenido de la memoria de los elementos de la lista
@@ -38,12 +39,12 @@ void LinkedList::anula(){
 	if(inicio){
 		delete inicio;
 		n=0;
-		inicio = NULL;
+		inicio = nullptr;
 	}
 }
 
 bool LinkedList::vacia(){
-	return n == 0; //inicio == NULL;
+	return n == 0; //inicio == nullptr;
 }
 
 Object* LinkedList::recupera(int p){
@@ -55,7 +56,7 @@ Object* LinkedList::recupera(int p){
 			//temp = temp.sig
 		//return temp.data temp->getData()
 	//else
-		return NULL;
+		return nullptr;
 }
 
 
@@ -77,15 +78,16 @@ Object* LinkedList::suprime(int p){
 			//temp = temp.sig
 		//temp.ant.sig = temp.sig  temp->getAnterior()->setSiguiente(temp->getSiguiente());
 		//temp.sig.ant = temp.ant
-		//temp.ant = null temp->setAnterior(NULL)
-		//temp.sig = null
+		//temp.ant = nullptr temp->setAnterior(nullptr)
+		//temp.sig = nullptr
 		//n--	
 		//retValue = temp.data
-		//temp.data = null
+		//temp.data = nullptr
 		//delete temp
 		//retornar retValue
 	//else
-		//retorna null
+		//retorna nullptr
+	return nullptr;
 }
 
 bool LinkedList::inserta(int p,Object* x){
