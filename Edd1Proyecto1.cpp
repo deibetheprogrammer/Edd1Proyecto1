@@ -53,10 +53,10 @@ int main()
 
         while (!cin || (choice < 1 || choice > 4))
         {
-            cin.clear();
-            cin.ignore(100,'\n');
+            //cin.clear();
+            //cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            cin >> choice;
+            //cin >> choice;
         }
     
         switch (choice) {
@@ -99,10 +99,10 @@ void listas() {
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            cin.clear();
-            cin.ignore(100,'\n');
+            //cin.clear();
+            //cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            cin >> choice;
+            //cin >> choice;
         }
     
         switch (choice) {
@@ -139,14 +139,14 @@ void pilas() {
             << "Su eleccion: ";
     
         int choice = 0;
-        cin >> choice;
+        //cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            cin.clear();
-            cin.ignore(100,'\n');
+            //cin.clear();
+            //cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            cin >> choice;
+            //cin >> choice;
         }
     
         switch (choice) {
@@ -181,14 +181,14 @@ void colas() {
             << "Su eleccion: ";
     
         int choice = 0;
-        cin >> choice;
+        //cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            cin.clear();
-            cin.ignore(100,'\n');
+            //cin.clear();
+            //cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            cin >> choice;
+            //cin >> choice;
         }
     
         switch (choice) {
@@ -237,10 +237,10 @@ void arraylist() {
 
         while (!cin || (choice < 1 || choice > 11))
         {
-            cin.clear();
-            cin.ignore(100,'\n');
+            //cin.clear();
+            //cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            cin >> choice;
+            //cin >> choice;
         }
     
         switch (choice) {
@@ -263,10 +263,10 @@ void arraylist() {
                     //cin >> pos;
 
                     while (!cin) {
-                        cin.clear();
-                        cin.ignore(100,'\n');
+                        //cin.clear();
+                        //cin.ignore(100,'\n');
                         cout << "Ingrese un numero por favor";
-                        cin >> pos;
+                        //cin >> pos;
                     }
 
                     if(arrayL->inserta(pos,new Alumno(nombre,cuenta)))
@@ -288,10 +288,31 @@ void arraylist() {
             }
             case 2: {
 
+                cout << "ELEMENTOS DE LA LISTA: " << endl;
+                arrayL->imprime();
                 
                 break;
             }
             case 3: {
+
+                cout << "Ingrese el numero de cuenta que desea buscar: " << endl;
+                string cuenta;
+                //cin >> cuenta;
+
+                Alumno* nuevo = new Alumno("",cuenta);
+
+                int pos = arrayL->localiza(nuevo);
+
+                if (pos != -1) 
+                {
+                    cout << "ALUMNO: " << endl;
+                    ((Alumno*)(arrayL->recupera(pos)))->toString();
+                    cout << "POSICION: " << pos << endl;
+                }
+                else
+                {
+                    cout << "No se ha encontrado al alumno en la lista";
+                }
                 
                 break;
             }
@@ -299,46 +320,120 @@ void arraylist() {
 
                 cout << "Ingrese la posicion del alumno que desea eliminar: " << endl;
                 int pos;
-                cin >> pos;
+                //cin >> pos;
 
                 while (!cin) {
-                    cin.clear();
-                    cin.ignore(100,'\n');
+                    //cin.clear();
+                    //cin.ignore(100,'\n');
                     cout << "Ingrese un numero por favor";
-                    cin >> pos;
+                    //cin >> pos;
                 }
 
-                if(arrayL->suprime(pos) != nullptr) 
-                    cout << "Se ha eliminado el elemento en la posicion " << pos << endl;
+                Alumno* borrado = dynamic_cast<Alumno*>(arrayL->suprime(pos));
 
+                if(borrado != nullptr) {
+                    cout << "Se ha eliminado el elemento en la posicion " << pos << endl;
+                    cout << "ELEMENTO BORRADO: ";
+                    borrado->toString();
+                }
+                else
+                {
+                    cout << "No se ha logrado borrar ningun elemento" << endl;
+                }
+                
                 break;
             }
             case 5: {
+
+                if(arrayL->vacia()) {
+                    cout << "La lista esta vacia" << endl;
+                }
+                else
+                {
+                    cout << "La lista no esta vacia, contiene " << arrayL->getN() << " elementos" << endl;
+                }
+                
 
                 break;
             }
             case 6: {
 
-                Alumno* temp;
-
                 cout << "Ingrese la posicion del elemento que desea recuperar: " << endl;
                 int pos;
-                cin >> pos;
+                //cin >> pos;
 
                 while (!cin) {
-                    cin.clear();
-                    cin.ignore(100,'\n');
+                    //cin.clear();
+                    //cin.ignore(100,'\n');
                     cout << "Ingrese un numero por favor";
-                    cin >> pos;
+                    //cin >> pos;
                 }
+
+                Alumno* recuperado = dynamic_cast<Alumno*>(arrayL->recupera(pos));
+
+                if(recuperado != nullptr) {
+                    cout << "Alumno recuperado en las posicion: " << pos << endl;
+                    cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                }
+                else
+                {
+                    cout << "No se ha logrado recuperar un elemento en esa posicion" << endl;
+                }
+                
 
                 break;
             }
             case 7: {
 
+                cout << "Ingrese una posicion, se mostrara el elemento en la posicion siguiente: " << endl;
+                int pos;
+                //cin >> pos;
+
+                while (!cin) {
+                    //cin.clear();
+                    //cin.ignore(100,'\n');
+                    cout << "Ingrese un numero por favor";
+                    //cin >> pos;
+                }
+
+                Alumno* recuperado = dynamic_cast<Alumno*>(arrayL->siguiente(pos));
+
+                if(recuperado != nullptr) 
+                {
+                    cout << "Alumno recuperado en las posicion: " << (pos+1) << endl;
+                    cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                }
+                else
+                {
+                    cout << "No se ha logrado recuperar un elemento en esa posicion" << endl;
+                }
+
                 break;
             }
             case 8: {
+
+                cout << "Ingrese una posicion, se mostrara el elemento en la posicion anterior: " << endl;
+                int pos;
+                //cin >> pos;
+
+                while (!cin) {
+                    //cin.clear();
+                    //cin.ignore(100,'\n');
+                    cout << "Ingrese un numero por favor";
+                    //cin >> pos;
+                }
+
+                Alumno* recuperado = dynamic_cast<Alumno*>(arrayL->anterior(pos));
+
+                if(recuperado != nullptr) 
+                {
+                    cout << "Alumno recuperado en las posicion: " << (pos-1) << endl;
+                    cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                }
+                else
+                {
+                    cout << "No se ha logrado recuperar un elemento en esa posicion" << endl;
+                }
 
                 break;
             }
@@ -350,7 +445,11 @@ void arraylist() {
                 break;
             }
             case 10: {
+                
+                Alumno* primero = dynamic_cast<Alumno*>(arrayL->primero());
 
+                cout << "PIMER ELEMENTO: " << primero->toString() << endl;
+                
                 break;
             }
             case 11: {
