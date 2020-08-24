@@ -6,9 +6,13 @@
 class ArrayList : public TDAList
 {
 	public:
+		//CONSTRUCTORES
 		ArrayList();
+
+		//DESTRUCTOR
 		~ArrayList();
 		
+		//METODOS
 		virtual bool inserta(int,Object*);
 		
 		virtual Object* suprime(int);
@@ -29,6 +33,8 @@ class ArrayList : public TDAList
 		
 		virtual int localiza(Object*);
 		
+		//MUTADORES
+		int getN();
 		
 		
 	protected:

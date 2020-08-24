@@ -5,6 +5,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+//CONSTRUCTORES
 ArrayList::ArrayList()
 {
 	capacity = 1000;
@@ -12,6 +13,12 @@ ArrayList::ArrayList()
 	array = new Object*[capacity];
 }
 
+//MUTADORES
+int ArrayList::getN() {
+	return this->n;
+}
+
+//METODOS
 bool ArrayList::inserta(int p,Object* x){
 
 	//primero validar p en el rango (1 hasta n+1)
