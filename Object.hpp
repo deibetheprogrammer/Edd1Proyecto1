@@ -17,7 +17,7 @@ class Object
         virtual string toString() = 0;
 
         //DESTRUCTOR
-        ~Object();
+        virtual ~Object() {}
     
 };
 
