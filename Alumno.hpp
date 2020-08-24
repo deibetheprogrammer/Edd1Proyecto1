@@ -10,14 +10,22 @@ using std::string;
 class Alumno : public Object
 {
     public:
+        //CONSTRUCTORES
         Alumno();
 
         Alumno(string nombre,string cuenta);
 
+        //MUTADORES
+        string getCuenta();
+
+        string getNombre();
+
+        //METODOS
         virtual string toString();
 
         virtual bool equals(Object* x);
 
+        //DESTRUCTOR
         ~Alumno();
         
     private:

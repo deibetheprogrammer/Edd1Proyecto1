@@ -13,6 +13,14 @@ Alumno::Alumno(string nombre,string cuenta) {
     this->cuenta = cuenta;
 }
 
+string Alumno::getCuenta() {
+    return this->cuenta;
+}
+
+string Alumno::getNombre() {
+    return this->nombre;
+}
+
 string Alumno::toString() {
     string str;
     str = "nombre: " + nombre + " | " + "cuenta: " + cuenta;
