@@ -41,7 +41,7 @@ Object* ArrayStack::pop(){
 void ArrayStack::print(){
 	//for i = tope -1 hasta 1
 		//imprimir el contenido de la casilla i del array
-	for (size_t i = 0; i < tope; i++)
+	for (int i = 0; i < tope; i++)
 	{
 		cout << array[i]->toString() << endl;
 	}
