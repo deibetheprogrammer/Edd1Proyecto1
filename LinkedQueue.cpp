@@ -2,16 +2,17 @@
 
 LinkedQueue::LinkedQueue()
 {
-	inicio=final=NULL;
+	inicio=final=nullptr;
 }
  
 Object* LinkedQueue::frente(){
  	//  if (vacia()){
- 	//  return NULL;
+ 	//  return nullptr;
  	//
  	//  }else{
  	//  return inicio.data;
 	//  }
+    return nullptr;
 }
 
 void LinkedQueue::poneEnCola(Object*) {
@@ -29,22 +30,24 @@ Object* LinkedQueue::quitaDeCola() {
         //temp = frente apuntar el valor del frente de la cola 
         //retValue = temp->getData almacenar el valor del nodo 
         //if temp.sig  validando que no sea el último nodo
-            //temp.sig.ant = NULL 
+            //temp.sig.ant = nullptr 
             //frente = temp.sig
-        //temp.siguiente =NULL
-        //temp.data =NULL 
+        //temp.siguiente =nullptr
+        //temp.data =nullptr 
         //Validando en caso que la cola quede vacía
             //metodo clear 
         //else 
             //borra temp 
         //retorna el retValue 
     //else
-        //return NULL
+        //return nullptr
+    
+    return nullptr;
 
 }
 
 bool LinkedQueue::vacia() {
-	return final == NULL;
+	return final == nullptr;
 }
 
 void LinkedQueue::anula(){
@@ -52,17 +55,17 @@ void LinkedQueue::anula(){
     //while( !vacia() ){
     //  temp = inicio;
     //  inicio = inicio.siguiente();
-    //  inicio.anterior() = NULL;
-    //	temp.siguiente = NULL;
+    //  inicio.anterior() = nullptr;
+    //	temp.siguiente = nullptr;
     //  delete temp;
     //}
-    //inicio = final = NULL;
+    //inicio = final = nullptr;
     //
 }
 
 void LinkedQueue::imprime() {
 	//Crear nodo* temporal y asignarle el inicio
-    //validar que inicio sea diferente de NULL
+    //validar que inicio sea diferente de nullptr
          //si es diferente de null entonces
             //while temporal sea diferente de null
                   //cout<<temporal.data
