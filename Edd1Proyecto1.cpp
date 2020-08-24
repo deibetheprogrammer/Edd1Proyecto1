@@ -48,7 +48,8 @@ int main()
             << "Su eleccion: ";
     
         int choice = 0;
-        cin >> choice;
+        
+        //cin >> choice;
 
         while (!cin || (choice < 1 || choice > 4))
         {
@@ -94,7 +95,7 @@ void listas() {
             << "Su eleccion: ";
     
         int choice = 0;
-        cin >> choice;
+        //cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
@@ -106,7 +107,7 @@ void listas() {
     
         switch (choice) {
             case 1: {
-                
+                arraylist();
                break;
             }
             case 2: {
@@ -218,21 +219,21 @@ void arraylist() {
 
         cout << "*** MENU: TRABAJAR CON ARRAYLIST ***" << endl
             << "----------------------" << endl
-            << " [1] Inserta" << endl
-            << " [2] Suprime" << endl
-            << " [3] Anula" << endl
-            << " [4] Recupera" << endl
-            << " [5] Siguiente" << endl
-            << " [6] Anterior" << endl
-            << " [7] Vacia" << endl
-            << " [8] Imprime" << endl
-            << " [9] Primero" << endl
-            << " [10] Localiza" << endl
-            << " [11] Regresar al menu de Listas" << endl
+            << " [1] Insertar elemento" << endl
+            << " [2] Imprimir elementos" << endl
+            << " [3] Buscar elementos" << endl
+            << " [4] Borrar elementos" << endl
+            << " [5] Ver si esta vacia" << endl
+            << " [6] Obtener elemento por posicion" << endl
+            << " [7] Obtener siguiente" << endl
+            << " [8] Obtener anterior" << endl
+            << " [9] Borrar todos los elementos (Anula)" << endl
+            << " [10] Mostrar el primer elemento" << endl
+            << " [11] Regresar al menu de listas" << endl
             << "Su eleccion: ";
     
         int choice = 0;
-        cin >> choice;
+        //cin >> choice;
 
         while (!cin || (choice < 1 || choice > 11))
         {
@@ -245,15 +246,58 @@ void arraylist() {
         switch (choice) {
             case 1: {
 
-                cout << "Que nombre tiene el nuevo alumno ?: ";
-                string nombre;
-                cin >> nombre;
+                bool loop = true;
 
-                cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
-                string cuenta;
-                cin >> cuenta;
+                while (loop) {
 
-                cout << "En que posicion desea insertar al alumno ?: ";
+                    cout << "Que nombre tiene el nuevo alumno ?: ";
+                    string nombre;
+                    //cin >> nombre;
+
+                    cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
+                    string cuenta;
+                    //cin >> cuenta;
+
+                    cout << "En que posicion desea insertar al alumno ?: ";
+                    int pos;
+                    //cin >> pos;
+
+                    while (!cin) {
+                        cin.clear();
+                        cin.ignore(100,'\n');
+                        cout << "Ingrese un numero por favor";
+                        cin >> pos;
+                    }
+
+                    if(arrayL->inserta(pos,new Alumno(nombre,cuenta)))
+                        cout << "Se ha insertado un nuevo alumno" << endl;
+                    
+                    cout << "Desea continuar introduciendo nuevos elementos ?:" << endl
+                         << "s: si" << endl
+                         << "n: no" << endl
+                         << "su eleccion: ";
+                    char resp;
+                    //cin >> resp;
+
+                    if (resp == 'n')
+                        loop = false;
+                
+                }
+                
+               break;
+            }
+            case 2: {
+
+                
+                break;
+            }
+            case 3: {
+                
+                break;
+            }
+            case 4: {
+
+                cout << "Ingrese la posicion del alumno que desea eliminar: " << endl;
                 int pos;
                 cin >> pos;
 
@@ -264,19 +308,8 @@ void arraylist() {
                     cin >> pos;
                 }
 
-                arrayL->inserta(pos,new Alumno(nombre,cuenta));
-                
-               break;
-            }
-            case 2: {
-                
-                break;
-            }
-            case 3: {
-
-                break;
-            }
-            case 4: {
+                if(arrayL->suprime(pos) != nullptr) 
+                    cout << "Se ha eliminado el elemento en la posicion " << pos << endl;
 
                 break;
             }
@@ -285,6 +318,19 @@ void arraylist() {
                 break;
             }
             case 6: {
+
+                Alumno* temp;
+
+                cout << "Ingrese la posicion del elemento que desea recuperar: " << endl;
+                int pos;
+                cin >> pos;
+
+                while (!cin) {
+                    cin.clear();
+                    cin.ignore(100,'\n');
+                    cout << "Ingrese un numero por favor";
+                    cin >> pos;
+                }
 
                 break;
             }
@@ -297,6 +343,9 @@ void arraylist() {
                 break;
             }
             case 9: {
+
+                arrayL->anula();
+                cout << "Se han eliminado todos los elementos" << endl;
 
                 break;
             }
