@@ -111,9 +111,11 @@ int ArrayList::localiza(Object* x){
 void ArrayList::imprime(){
 	//en un ciclo desde 1 hasta n
 	//imprime en pantalla el contenido de las n casillas del arreglo
+	int pos = 1;
 	for (size_t i = 0; i < n; i++)
 	{
-		cout << array[i]->toString() << endl;
+		cout << '(' << pos << "): " << array[i]->toString() << endl;
+		pos++;
 	}
 	
 }
