@@ -29,7 +29,8 @@ void Simbolo::setSimbolo(char simbolo) {
 //METODOS
 
 string Simbolo::toString() {
-    string str = "SIMBOLO: " + simbolo;
+    string str = "SIMBOLO: ";
+    str.append(1,simbolo);
     return str;
 }
 
