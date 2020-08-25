@@ -15,7 +15,7 @@ class ArrayQueue : public TDAQueue
 		virtual Object* quitaDeCola();
 		virtual bool vacia();
 		virtual void anula();
-		virtual void imprimir();
+		virtual void imprime();
 		
 		
 	protected:
