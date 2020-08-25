@@ -138,7 +138,7 @@ void pilas() {
             << " [3] Regresar al menu principal" << endl
             << "Su eleccion: ";
     
-        int choice = 0;
+        int choice;
         //cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
@@ -471,7 +471,7 @@ void arraystack() {
 
     while(loop) {
 
-        cout << "*** MENU: TRABAJAR CON ARRAYLIST ***" << endl
+        cout << "*** MENU: TRABAJAR CON ARRAYSTACK ***" << endl
             << "----------------------" << endl
             << " [1] Empujar(push)" << endl
             << " [2] Sacar(pop)" << endl
@@ -481,10 +481,10 @@ void arraystack() {
             << " [6] Regresar al menu de pilas" << endl
             << "Su eleccion: ";
     
-        int choice = 0;
+        int choice;
         //cin >> choice;
 
-        while (!cin || (choice < 1 || choice > 3))
+        while (!cin || (choice < 1 || choice > 6))
         {
             //cin.clear();
             //cin.ignore(100,'\n');
@@ -527,7 +527,7 @@ void arraystack() {
 
                 if (tope)
                 {
-                    cout << "ELEMENTO SACADO: " << endl
+                    cout << "ELEMENTO EN EL TOPE: " << endl
                          << tope->toString() << endl;
                 }
                 else
@@ -560,5 +560,112 @@ void arraystack() {
             }
         }
     }
+}
 
+//Trabajar con ArrayQueue
+void arrayqueue() {
+
+    ArrayQueue* arrayQ = new ArrayQueue();
+
+    bool loop = true;
+
+    while(loop) {
+
+        cout << "*** MENU: TRABAJAR CON ARRAYQUEUE ***" << endl
+            << "----------------------" << endl
+            << " [1] Encolar(queue)" << endl
+            << " [2] Desencolar(dequeue)" << endl
+            << " [3] Ver tope(peek)" << endl
+            << " [4] Verificar si esta vacia" << endl
+            << " [5] Imprimir elementos" << endl
+            << " [6] Regresar al menu de colas"
+            << "Su eleccion: ";
+    
+        int choice = 0;
+        //cin >> choice;
+
+        while (!cin || (choice < 1 || choice > 3))
+        {
+            //cin.clear();
+            //cin.ignore(100,'\n');
+            cout << "Por favor escoja un numero valido";
+            //cin >> choice;
+        }
+    
+        switch (choice) {
+            case 1: {
+
+                cout << "Que nombre tiene el nuevo alumno ?: ";
+                string nombre;
+                //cin >> nombre;
+
+                cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
+                string cuenta;
+                //cin >> cuenta;
+
+                cout << "En que posicion desea insertar al alumno ?: ";
+                int pos;
+                //cin >> pos;
+
+                while (!cin) {
+                    //cin.clear();
+                    //cin.ignore(100,'\n');
+                    cout << "Ingrese un numero por favor";
+                    //cin >> pos;
+                }
+                
+               break;
+            }
+            case 2: {
+
+                Alumno* desencolado = dynamic_cast<Alumno*>(arrayQ->quitaDeCola());
+
+                if(desencolado) {
+                    cout << "Elemento quitado de la cola: " << endl
+                         << desencolado->toString() << endl;
+                }
+                else
+                {
+                    cout << "No hay elementos en la cola";
+                }
+            
+                break;
+            }
+            case 3: {
+
+                Alumno* frente = dynamic_cast<Alumno*>(arrayQ->frente());
+
+                if(frente) {
+                    cout << "Elemento al frente de la cola: " << endl
+                         << frente->toString() << endl;
+                }
+                else
+                {
+                    cout << "No hay elementos en la cola";
+                }
+
+            }
+            case 4: {
+
+                if (arrayQ->vacia())
+                {
+                    cout << "La cola esta vacia";
+                }
+                else
+                {
+                    cout << "La cola no esta vacia";
+                }
+            }
+            case  5: {
+
+                cout << "Elementos de la cola: " << endl;
+                arrayQ->imprime();
+                
+            }
+            case 6: {
+                loop = false;
+                break;
+            }
+        }
+    }
 }
