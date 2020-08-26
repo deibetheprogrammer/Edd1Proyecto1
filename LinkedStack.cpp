@@ -1,4 +1,8 @@
 #include "LinkedStack.hpp"
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 LnkedStack::LnkedStack()
 {
@@ -13,9 +17,16 @@ LnkedStack::~LnkedStack()
 
 void LnkedStack::print(){
 	//temp = top
+	Node* temp = tope;
 	//while temp != null
 		//print temp.data
 		//temp = temp.sig
+	while (temp != nullptr)
+	{
+		cout << temp->getData()->toString() << endl;
+		temp = temp->getSiguiente();
+	}
+	
 }
 
 void LnkedStack::clear(){
@@ -34,7 +45,11 @@ Object* LnkedStack::top(){
 		//return null
 	//else
 		//return top.data
-	return nullptr;
+	if (isEmpty())
+	{
+		return nullptr;
+	}
+	return tope->getData();
 }
 
 Object* LnkedStack::pop(){
@@ -49,12 +64,33 @@ Object* LnkedStack::pop(){
 		//temp.data = nullptr
 		//delete temp
 		//return reValue
-	return nullptr;
+	if (isEmpty())
+	{
+		return nullptr;
+	}
+	else
+	{
+		Node* temp = tope;
+		tope = tope->getSiguiente();
+		tope->setAnterior(nullptr);
+		temp->setSiguiente(nullptr);
+		Object* retValue = temp->getData();
+		temp->setData(nullptr);
+		delete temp;
+
+		return retValue;
+	}
+	
 } 
 
 void LnkedStack::push(Object* x){
 	//crear newNode que contenga x 
 	//newNode.sig = top
 	//top.ant = newNode
-	//top = newNode	
+	//top = newNode
+	Node* nNode = new Node();
+	nNode->setData(x);
+	nNode->setSiguiente(tope);
+	tope->setAnterior(nNode);
+	tope = nNode;
 }
