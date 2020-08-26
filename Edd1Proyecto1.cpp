@@ -744,7 +744,7 @@ void linkedlist()
     while (loop)
     {
 
-        cout << "*** MENU: TRABAJAR CON ARRAYLIST ***" << endl
+        cout << "*** MENU: TRABAJAR CON LINKEDLIST ***" << endl
              << "----------------------" << endl
              << " [1] Insertar elemento" << endl
              << " [2] Imprimir elementos" << endl
@@ -906,7 +906,7 @@ void linkedlist()
                 //cin >> pos;
             }
 
-            Alumno *recuperado = dynamic_cast<Alumno *>(linkedL->recupera(pos));
+            Alumno* recuperado = dynamic_cast<Alumno*>(linkedL->recupera(pos));
 
             if (recuperado != nullptr)
             {
@@ -935,7 +935,7 @@ void linkedlist()
                 //cin >> pos;
             }
 
-            Alumno *recuperado = dynamic_cast<Alumno *>(linkedL->siguiente(pos));
+            Alumno* recuperado = dynamic_cast<Alumno*>(linkedL->siguiente(pos));
 
             if (recuperado != nullptr)
             {
@@ -1007,14 +1007,14 @@ void linkedlist()
 //Trabajar con LinkedStack
 void linkedstack() {
 
-    LinkedStack* arrayS = new LinkedStack();
+    LinkedStack* linkedS = new LinkedStack();
 
     bool loop = true;
 
     while (loop)
     {
 
-        cout << "*** MENU: TRABAJAR CON ARRAYSTACK ***" << endl
+        cout << "*** MENU: TRABAJAR CON LINKEDSTACK ***" << endl
              << "----------------------" << endl
              << " [1] Empujar(push)" << endl
              << " [2] Sacar(pop)" << endl
@@ -1044,7 +1044,7 @@ void linkedstack() {
             char simbolo;
             //cin >> simbolo;
 
-            arrayS->push(new Simbolo(simbolo));
+            linkedS->push(new Simbolo(simbolo));
 
             cout << "Nuevo simbolo ingresado" << endl;
 
@@ -1053,7 +1053,7 @@ void linkedstack() {
         case 2:
         {
 
-            Simbolo *sacado = dynamic_cast<Simbolo *>(arrayS->pop());
+            Simbolo *sacado = dynamic_cast<Simbolo *>(linkedS->pop());
 
             if (sacado)
             {
@@ -1070,7 +1070,7 @@ void linkedstack() {
         case 3:
         {
 
-            Simbolo *tope = dynamic_cast<Simbolo *>(arrayS->top());
+            Simbolo *tope = dynamic_cast<Simbolo *>(linkedS->top());
 
             if (tope)
             {
@@ -1087,7 +1087,7 @@ void linkedstack() {
         case 4:
         {
 
-            if (arrayS->isEmpty())
+            if (linkedS->isEmpty())
                 cout << "La pila esta vacia";
             else
                 cout << "La pila no esta vacia";
@@ -1099,7 +1099,7 @@ void linkedstack() {
 
             cout << "Elementos de la pila: " << endl;
 
-            arrayS->print();
+            linkedS->print();
 
             break;
         }
@@ -1114,5 +1114,116 @@ void linkedstack() {
 
 //Trabajar con LinkedQueue
 void linkedqueue() {
+
+    LinkedQueue *linkedQ = new LinkedQueue();
+
+    bool loop = true;
+
+    while (loop)
+    {
+
+        cout << "*** MENU: TRABAJAR CON ARRAYQUEUE ***" << endl
+             << "----------------------" << endl
+             << " [1] Encolar(queue)" << endl
+             << " [2] Desencolar(dequeue)" << endl
+             << " [3] Ver tope(peek)" << endl
+             << " [4] Verificar si esta vacia" << endl
+             << " [5] Imprimir elementos" << endl
+             << " [6] Regresar al menu de colas"
+             << "Su eleccion: ";
+
+        int choice = 0;
+        //cin >> choice;
+
+        while (!cin || (choice < 1 || choice > 3))
+        {
+            //cin.clear();
+            //cin.ignore(100,'\n');
+            cout << "Por favor escoja un numero valido";
+            //cin >> choice;
+        }
+
+        switch (choice)
+        {
+        case 1:
+        {
+
+            cout << "Que nombre tiene el nuevo alumno ?: ";
+            string nombre;
+            //cin >> nombre;
+
+            cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
+            string cuenta;
+            //cin >> cuenta;
+
+            while (!cin)
+            {
+                //cin.clear();
+                //cin.ignore(100,'\n');
+                cout << "Ingrese un numero por favor";
+                //cin >> pos;
+            }
+
+            linkedQ->poneEnCola(new Alumno(nombre, cuenta));
+
+            break;
+        }
+        case 2:
+        {
+
+            Alumno *desencolado = dynamic_cast<Alumno *>(linkedQ->quitaDeCola());
+
+            if (desencolado)
+            {
+                cout << "Elemento quitado de la cola: " << endl
+                     << desencolado->toString() << endl;
+            }
+            else
+            {
+                cout << "No hay elementos en la cola";
+            }
+
+            break;
+        }
+        case 3:
+        {
+
+            Alumno *frente = dynamic_cast<Alumno *>(linkedQ->frente());
+
+            if (frente)
+            {
+                cout << "Elemento al frente de la cola: " << endl
+                     << frente->toString() << endl;
+            }
+            else
+            {
+                cout << "No hay elementos en la cola";
+            }
+        }
+        case 4:
+        {
+
+            if (linkedQ->vacia())
+            {
+                cout << "La cola esta vacia";
+            }
+            else
+            {
+                cout << "La cola no esta vacia";
+            }
+        }
+        case 5:
+        {
+
+            cout << "Elementos de la cola: " << endl;
+            linkedQ->imprime();
+        }
+        case 6:
+        {
+            loop = false;
+            break;
+        }
+        }
+    }
     
 }
