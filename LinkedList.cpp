@@ -202,10 +202,6 @@ bool LinkedList::inserta(int p,Object* x){
 	return false;
 }
 
-
-
-
-
 LinkedList::~LinkedList()
 {
 	delete inicio;
