@@ -1,4 +1,11 @@
+#include <iostream>
+#include <string>
 #include "LinkedList.hpp"
+#include "Alumno.hpp"
+
+using std::string;
+using std::cout;
+using std::endl;
 
 LinkedList::LinkedList()
 {
@@ -15,23 +22,46 @@ Object* LinkedList::primero(){
 
 void LinkedList::imprime(){
 	//hops = n - 1 
+	int hops = n - 1;
 	//declarar temp = inicio para iterar
+	Node* temp = inicio;
 	// for i = 1 to hops
 		//print temp.data
-		//temp = temp.sig	
+		//temp = temp.sig
+
+	cout << "Alumnos en la lista: " << endl;
+	for (int i = 1; i <= hops ; i++)
+	{
+		cout << '(' << i << ')'<< ((Alumno*)(temp->getData()))->toString() << endl;
+		temp = temp->getSiguiente();
+	}
+	
 }
 
 int LinkedList::localiza(Object* x){
 	//hops = n - 1 
+	int hops = n-1;
 	//declarar temp = inicio para iterar
+	Node* temp = inicio;
 	// for i = 1 to hops
 		//if x == temp.data
 			//return i
 		//
 			//temp = temp.sig
-			
+	for (int i = 1; i <= hops; i++)
+	{
+		if (x->equals(temp->getData()))
+		{
+			return i;
+		}
+		else
+		{
+			temp = temp->getSiguiente();
+		}
+	}
+	
 	//return -1 --- el elemento no se encontr� en la lista
-	return 0;
+	return -1;
 }
 
 //si  libera en c++ el contenido de la memoria de los elementos de la lista
@@ -54,9 +84,24 @@ Object* LinkedList::recupera(int p){
 		//declarar temp = inicio para iterar
 		// for i = 1 to hops
 			//temp = temp.sig
-		//return temp.data temp->getData()
+		//return temp.data 
 	//else
+		//return nullptr
+	if (p >= 1 && p <= n)
+	{
+		int hops = p - 1;
+		Node* temp = inicio;
+		for (int i = 1; i <= hops; i++)
+		{
+			temp = temp->getSiguiente();
+		}
+		return temp->getData();
+	}
+	else
+	{
 		return nullptr;
+	}
+	
 }
 
 
@@ -87,6 +132,28 @@ Object* LinkedList::suprime(int p){
 		//retornar retValue
 	//else
 		//retorna nullptr
+	if (p >=1 && p <= n)
+	{
+		int hops = p - 1;
+		Node* temp = inicio;
+		for (int i = 1; i <= hops; i++)
+		{
+			temp = temp->getSiguiente();
+		}
+		temp->getAnterior()->setSiguiente(temp->getSiguiente());
+		temp->getSiguiente()->setAnterior(temp->getAnterior());
+		temp->setAnterior(nullptr);
+		temp->setSiguiente(nullptr);
+
+		n--;
+
+		Object* retValue = temp->getData();
+		temp->setData(nullptr);
+		delete temp;
+
+		return retValue;
+		
+	}
 	return nullptr;
 }
 
@@ -105,8 +172,34 @@ bool LinkedList::inserta(int p,Object* x){
 		//n++
 		//return true
 	//else
-		return false;
+		//return false
 	
+	if (p >=1 && p <= n)
+	{
+		int hops = p - 1;
+		Node* temp = inicio;
+
+		for (int i = 1; i <= hops; i++)
+		{
+			temp = temp->getSiguiente();
+		}
+
+		Node* nNode = new Node();
+		nNode->setData(x);
+
+		nNode->setAnterior(temp->getAnterior());
+		nNode->setSiguiente(temp->getSiguiente());
+
+		temp->getAnterior()->setSiguiente(nNode);
+		nNode->setSiguiente(temp);
+		temp->setAnterior(nNode);
+
+		n++;
+
+		return true;
+		
+	}
+	return false;
 }
 
 
