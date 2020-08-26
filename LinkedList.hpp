@@ -8,9 +8,17 @@
 class LinkedList : public TDAList
 {
 	public:
+
+		//CONSTRUCTORES
 		LinkedList();
+
+		//DESTRUCTOR
 		~LinkedList();
+
+		//MUTADORES
+		int getN();
 		
+		//METODOS
 		virtual bool inserta(int,Object*);
 		
 		virtual Object* suprime(int);

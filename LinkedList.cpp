@@ -7,12 +7,19 @@ using std::string;
 using std::cout;
 using std::endl;
 
+//CONSTRUCTORES
 LinkedList::LinkedList()
 {
 	inicio = nullptr;
 	n = 0;
 }
 
+//MUTADORES
+int LinkedList::getN() {
+	return n;
+}
+
+//METODOS
 Object* LinkedList::primero(){
 	if (inicio) //si inicio no es nullptr
 		return inicio->getData();
@@ -202,6 +209,7 @@ bool LinkedList::inserta(int p,Object* x){
 	return false;
 }
 
+//DESTRUCTOR
 LinkedList::~LinkedList()
 {
 	delete inicio;
