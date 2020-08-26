@@ -6,11 +6,11 @@
 #include "Node.hpp"
 #include "Object.hpp"
 
-class LnkedStack : public TDAStack
+class LinkedStack : public TDAStack
 {
 	public:
-		LnkedStack();
-		~LnkedStack();
+		LinkedStack();
+		~LinkedStack();
 		virtual void push(Object*);
 		virtual Object* pop() ;
 		virtual Object* top() ;

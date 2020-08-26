@@ -4,18 +4,18 @@
 using std::cout;
 using std::endl;
 
-LnkedStack::LnkedStack()
+LinkedStack::LinkedStack()
 {
 	tope = nullptr;
 }
 
-LnkedStack::~LnkedStack()
+LinkedStack::~LinkedStack()
 {
 	delete tope;
 }
 
 
-void LnkedStack::print(){
+void LinkedStack::print(){
 	//temp = top
 	Node* temp = tope;
 	//while temp != null
@@ -29,18 +29,18 @@ void LnkedStack::print(){
 	
 }
 
-void LnkedStack::clear(){
+void LinkedStack::clear(){
 	//si no est� vac�a
 		delete tope;
 		tope = nullptr;
 }
 
 
-bool LnkedStack::isEmpty(){
+bool LinkedStack::isEmpty(){
 	return tope == nullptr;
 }
 
-Object* LnkedStack::top(){
+Object* LinkedStack::top(){
 	//si est� vac�a 
 		//return null
 	//else
@@ -52,7 +52,7 @@ Object* LnkedStack::top(){
 	return tope->getData();
 }
 
-Object* LnkedStack::pop(){
+Object* LinkedStack::pop(){
 	//si est� vac�a
 		//return null
 	//else
@@ -83,7 +83,7 @@ Object* LnkedStack::pop(){
 	
 } 
 
-void LnkedStack::push(Object* x){
+void LinkedStack::push(Object* x){
 	//crear newNode que contenga x 
 	//newNode.sig = top
 	//top.ant = newNode
