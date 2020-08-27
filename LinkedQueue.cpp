@@ -65,17 +65,14 @@ Object* LinkedQueue::quitaDeCola() {
         //return nullptr
     if (!vacia())
     {
-        Node* temp = final;
-        Object* retValue = temp->getData();
-        if (temp->getSiguiente())
-        {
-            temp->getSiguiente()->setAnterior(nullptr);
-            final = temp->getSiguiente();
-        }
+        Node* temp = inicio;
+        Object* retValue = inicio->getData();
+        inicio = inicio->getSiguiente();
+        
         temp->setSiguiente(nullptr);
         temp->setData(nullptr);
         if(vacia())
-            anula();
+            final = nullptr;
         else
             delete temp;
         return retValue;
@@ -86,32 +83,16 @@ Object* LinkedQueue::quitaDeCola() {
 }
 
 bool LinkedQueue::vacia() {
-	return final == nullptr;
+	return inicio == nullptr;
 }
 
 void LinkedQueue::anula(){
-    //validar si no esta vacio
-    //while( !vacia() ){
-    //  temp = inicio;
-    //  inicio = inicio.siguiente();
-    //  inicio.anterior() = nullptr;
-    //	temp.siguiente = nullptr;
-    //  delete temp;
-    //}
-    //inicio = final = nullptr;
-    //
-    if (!vacia())
+    if (inicio)
     {
-        while (!vacia())
-        {
-            Node* temp = inicio;
-            inicio = inicio->getSiguiente();
-            inicio->setAnterior(nullptr);
-            temp->setSiguiente(nullptr);
-            delete temp;
-        }
+        delete inicio;
         inicio = final = nullptr;
     }
+    
 }
 
 void LinkedQueue::imprime() {
@@ -122,9 +103,9 @@ void LinkedQueue::imprime() {
                   //cout<<temporal.data
                  //temporal= temporal.sig
          // retornar mensaje de que la cola esta vacia.
-    Node* temp = inicio;
     if (inicio != nullptr)
     {
+        Node* temp = inicio;
         while (temp != nullptr)
         {
             cout << temp->getData()->toString() << endl;
