@@ -91,6 +91,9 @@ void LinkedStack::push(Object* x){
 	Node* nNode = new Node();
 	nNode->setData(x);
 	nNode->setSiguiente(tope);
-	tope->setAnterior(nNode);
+	if (tope != nullptr)
+	{
+		tope->setAnterior(nNode);
+	}
 	tope = nNode;
 }
