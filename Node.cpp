@@ -2,9 +2,9 @@
 
 Node::Node()
 {
-	anterior=NULL;
-	siguiente=NULL;
-	data=NULL;
+	anterior = nullptr;
+	siguiente = nullptr;
+	data = nullptr;
 }
 
 void Node::setSiguiente(Node* next){
