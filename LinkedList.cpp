@@ -28,8 +28,8 @@ Object* LinkedList::primero(){
 }
 
 void LinkedList::imprime(){
-	//hops = n - 1 
-	int hops = n - 1;
+	//hops = n-1
+	int hops = n-1;
 	//declarar temp = inicio para iterar
 	Node* temp = inicio;
 	// for i = 1 to hops
@@ -37,7 +37,7 @@ void LinkedList::imprime(){
 		//temp = temp.sig
 
 	cout << "Alumnos en la lista: " << endl;
-	for (int i = 1; i <= hops ; i++)
+	for (int i = 0; i <= hops ; i++)
 	{
 		cout << '(' << i << ')'<< ((Alumno*)(temp->getData()))->toString() << endl;
 		temp = temp->getSiguiente();
@@ -46,7 +46,7 @@ void LinkedList::imprime(){
 }
 
 int LinkedList::localiza(Object* x){
-	//hops = n - 1 
+	//hops = n-1
 	int hops = n-1;
 	//declarar temp = inicio para iterar
 	Node* temp = inicio;
@@ -55,11 +55,11 @@ int LinkedList::localiza(Object* x){
 			//return i
 		//
 			//temp = temp.sig
-	for (int i = 1; i <= hops; i++)
+	for (int i = 0; i <= hops; i++)
 	{
 		if (x->equals(temp->getData()))
 		{
-			return i;
+			return (i+1);
 		}
 		else
 		{
@@ -195,7 +195,6 @@ bool LinkedList::inserta(int p,Object* x){
 		nNode->setData(x);
 
 		nNode->setAnterior(temp->getAnterior());
-		nNode->setSiguiente(temp->getSiguiente());
 
 		temp->getAnterior()->setSiguiente(nNode);
 		nNode->setSiguiente(temp);
