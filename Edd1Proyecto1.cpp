@@ -372,8 +372,8 @@ void arraylist()
             if (borrado != nullptr)
             {
                 cout << "Se ha eliminado el elemento en la posicion " << pos << endl;
-                cout << "ELEMENTO BORRADO: ";
-                borrado->toString();
+                cout << "ELEMENTO BORRADO: " << borrado->toString() << endl;
+                
             }
             else
             {
@@ -415,8 +415,8 @@ void arraylist()
 
             if (recuperado != nullptr)
             {
-                cout << "Alumno recuperado en las posicion: " << pos << endl;
-                cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                cout << "Alumno recuperado en la posicion: " << pos << endl;
+                cout << "ALUMNO RECUPERADO: " << recuperado->toString() << endl;
             }
             else
             {
@@ -444,8 +444,8 @@ void arraylist()
 
             if (recuperado != nullptr)
             {
-                cout << "Alumno recuperado en las posicion: " << (pos + 1) << endl;
-                cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                cout << "Alumno recuperado en la posicion: " << (pos + 1) << endl;
+                cout << "ALUMNO RECUPERADO: " << recuperado->toString() << endl;
             }
             else
             {
@@ -473,8 +473,8 @@ void arraylist()
 
             if (recuperado != nullptr)
             {
-                cout << "Alumno recuperado en las posicion: " << (pos - 1) << endl;
-                cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                cout << "Alumno recuperado en la posicion: " << (pos - 1) << endl;
+                cout << "ALUMNO RECUPERADO: " << recuperado->toString() << endl;
             }
             else
             {
@@ -859,8 +859,7 @@ void linkedlist()
             if (borrado != nullptr)
             {
                 cout << "Se ha eliminado el elemento en la posicion " << pos << endl;
-                cout << "ELEMENTO BORRADO: ";
-                borrado->toString();
+                cout << "ELEMENTO BORRADO: " << borrado->toString() << endl;
             }
             else
             {
@@ -902,8 +901,8 @@ void linkedlist()
 
             if (recuperado != nullptr)
             {
-                cout << "Alumno recuperado en las posicion: " << pos << endl;
-                cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                cout << "Alumno recuperado en la posicion: " << pos << endl;
+                cout << "ALUMNO RECUPERADO: " << recuperado->toString() << endl;
             }
             else
             {
@@ -931,8 +930,8 @@ void linkedlist()
 
             if (recuperado != nullptr)
             {
-                cout << "Alumno recuperado en las posicion: " << (pos + 1) << endl;
-                cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                cout << "Alumno recuperado en la posicion: " << (pos + 1) << endl;
+                cout << "ALUMNO RECUPERADO: " << recuperado->toString() << endl;
             }
             else
             {
@@ -960,8 +959,8 @@ void linkedlist()
 
             if (recuperado != nullptr)
             {
-                cout << "Alumno recuperado en las posicion: " << (pos - 1) << endl;
-                cout << "ALUMNO RECUPERADO: " << recuperado->toString();
+                cout << "Alumno recuperado en la posicion: " << (pos - 1) << endl;
+                cout << "ALUMNO RECUPERADO: " << recuperado->toString() << endl;
             }
             else
             {
