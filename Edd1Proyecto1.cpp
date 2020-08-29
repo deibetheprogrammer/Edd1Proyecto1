@@ -58,14 +58,14 @@ int main()
 
         int choice = 0;
 
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 4))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -111,14 +111,14 @@ void listas()
              << "Su eleccion: ";
 
         int choice = 0;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -159,14 +159,14 @@ void pilas()
              << "Su eleccion: ";
 
         int choice;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -207,14 +207,14 @@ void colas()
              << "Su eleccion: ";
 
         int choice;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -265,14 +265,14 @@ void arraylist()
              << "Su eleccion: ";
 
         int choice;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 11))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -286,22 +286,22 @@ void arraylist()
 
                 cout << "Que nombre tiene el nuevo alumno ?: ";
                 string nombre;
-                //cin >> nombre;
+                cin >> nombre;
 
                 cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
                 string cuenta;
-                //cin >> cuenta;
+                cin >> cuenta;
 
                 cout << "En que posicion desea insertar al alumno ?: ";
                 int pos;
-                //cin >> pos;
+                cin >> pos;
 
                 while (!cin)
                 {
-                    //cin.clear();
-                    //cin.ignore(100,'\n');
+                    cin.clear();
+                    cin.ignore(100,'\n');
                     cout << "Ingrese un numero por favor";
-                    //cin >> pos;
+                    cin >> pos;
                 }
 
                 if (arrayL->inserta(pos, new Alumno(nombre, cuenta)))
@@ -312,7 +312,7 @@ void arraylist()
                      << "n: no" << endl
                      << "su eleccion: ";
                 char resp;
-                //cin >> resp;
+                cin >> resp;
 
                 if (resp == 'n')
                     loop = false;
@@ -333,7 +333,7 @@ void arraylist()
 
             cout << "Ingrese el numero de cuenta que desea buscar: " << endl;
             string cuenta;
-            //cin >> cuenta;
+            cin >> cuenta;
 
             Alumno *nuevo = new Alumno("", cuenta);
 
@@ -357,14 +357,14 @@ void arraylist()
 
             cout << "Ingrese la posicion del alumno que desea eliminar: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno *borrado = dynamic_cast<Alumno *>(arrayL->suprime(pos));
@@ -401,14 +401,14 @@ void arraylist()
 
             cout << "Ingrese la posicion del elemento que desea recuperar: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno *recuperado = dynamic_cast<Alumno *>(arrayL->recupera(pos));
@@ -430,14 +430,14 @@ void arraylist()
 
             cout << "Ingrese una posicion, se mostrara el elemento en la posicion siguiente: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno *recuperado = dynamic_cast<Alumno *>(arrayL->siguiente(pos));
@@ -459,14 +459,14 @@ void arraylist()
 
             cout << "Ingrese una posicion, se mostrara el elemento en la posicion anterior: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno *recuperado = dynamic_cast<Alumno *>(arrayL->anterior(pos));
@@ -531,14 +531,14 @@ void arraystack()
              << "Su eleccion: ";
 
         int choice;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 6))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -548,7 +548,7 @@ void arraystack()
 
             cout << "Ingrese un simbolo: ";
             char simbolo;
-            //cin >> simbolo;
+            cin >> simbolo;
 
             arrayS->push(new Simbolo(simbolo));
 
@@ -640,14 +640,14 @@ void arrayqueue()
              << "Su eleccion: ";
 
         int choice = 0;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -657,19 +657,11 @@ void arrayqueue()
 
             cout << "Que nombre tiene el nuevo alumno ?: ";
             string nombre;
-            //cin >> nombre;
+            cin >> nombre;
 
             cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
             string cuenta;
-            //cin >> cuenta;
-
-            while (!cin)
-            {
-                //cin.clear();
-                //cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
-                //cin >> pos;
-            }
+            cin >> cuenta;
 
             arrayQ->poneEnCola(new Alumno(nombre, cuenta));
 
@@ -760,14 +752,14 @@ void linkedlist()
              << "Su eleccion: ";
 
         int choice;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 11))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -781,22 +773,22 @@ void linkedlist()
 
                 cout << "Que nombre tiene el nuevo alumno ?: ";
                 string nombre;
-                //cin >> nombre;
+                cin >> nombre;
 
                 cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
                 string cuenta;
-                //cin >> cuenta;
+                cin >> cuenta;
 
                 cout << "En que posicion desea insertar al alumno ?: ";
                 int pos;
-                //cin >> pos;
+                cin >> pos;
 
                 while (!cin)
                 {
-                    //cin.clear();
-                    //cin.ignore(100,'\n');
+                    cin.clear();
+                    cin.ignore(100,'\n');
                     cout << "Ingrese un numero por favor";
-                    //cin >> pos;
+                    cin >> pos;
                 }
 
                 if (linkedL->inserta(pos, new Alumno(nombre, cuenta)))
@@ -807,7 +799,7 @@ void linkedlist()
                      << "n: no" << endl
                      << "su eleccion: ";
                 char resp;
-                //cin >> resp;
+                cin >> resp;
 
                 if (resp == 'n')
                     loop = false;
@@ -828,7 +820,7 @@ void linkedlist()
 
             cout << "Ingrese el numero de cuenta que desea buscar: " << endl;
             string cuenta;
-            //cin >> cuenta;
+            cin >> cuenta;
 
             Alumno *nuevo = new Alumno("", cuenta);
 
@@ -852,14 +844,14 @@ void linkedlist()
 
             cout << "Ingrese la posicion del alumno que desea eliminar: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno *borrado = dynamic_cast<Alumno *>(linkedL->suprime(pos));
@@ -896,14 +888,14 @@ void linkedlist()
 
             cout << "Ingrese la posicion del elemento que desea recuperar: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno* recuperado = dynamic_cast<Alumno*>(linkedL->recupera(pos));
@@ -925,14 +917,14 @@ void linkedlist()
 
             cout << "Ingrese una posicion, se mostrara el elemento en la posicion siguiente: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno* recuperado = dynamic_cast<Alumno*>(linkedL->siguiente(pos));
@@ -954,14 +946,14 @@ void linkedlist()
 
             cout << "Ingrese una posicion, se mostrara el elemento en la posicion anterior: " << endl;
             int pos;
-            //cin >> pos;
+            cin >> pos;
 
             while (!cin)
             {
-                //cin.clear();
-                //cin.ignore(100,'\n');
+                cin.clear();
+                cin.ignore(100,'\n');
                 cout << "Ingrese un numero por favor";
-                //cin >> pos;
+                cin >> pos;
             }
 
             Alumno *recuperado = dynamic_cast<Alumno *>(linkedL->anterior(pos));
@@ -1025,14 +1017,14 @@ void linkedstack() {
              << "Su eleccion: ";
 
         int choice;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 6))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -1042,7 +1034,7 @@ void linkedstack() {
 
             cout << "Ingrese un simbolo: ";
             char simbolo;
-            //cin >> simbolo;
+            cin >> simbolo;
 
             linkedS->push(new Simbolo(simbolo));
 
@@ -1133,14 +1125,14 @@ void linkedqueue() {
              << "Su eleccion: ";
 
         int choice = 0;
-        //cin >> choice;
+        cin >> choice;
 
         while (!cin || (choice < 1 || choice > 3))
         {
-            //cin.clear();
-            //cin.ignore(100,'\n');
+            cin.clear();
+            cin.ignore(100,'\n');
             cout << "Por favor escoja un numero valido";
-            //cin >> choice;
+            cin >> choice;
         }
 
         switch (choice)
@@ -1150,19 +1142,11 @@ void linkedqueue() {
 
             cout << "Que nombre tiene el nuevo alumno ?: ";
             string nombre;
-            //cin >> nombre;
+            cin >> nombre;
 
             cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
             string cuenta;
-            //cin >> cuenta;
-
-            while (!cin)
-            {
-                //cin.clear();
-                //cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
-                //cin >> pos;
-            }
+            cin >> cuenta;
 
             linkedQ->poneEnCola(new Alumno(nombre, cuenta));
 
