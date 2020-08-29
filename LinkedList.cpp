@@ -28,8 +28,6 @@ Object* LinkedList::primero(){
 }
 
 void LinkedList::imprime(){
-	//hops = n-1
-	int hops = n-1;
 	//declarar temp = inicio para iterar
 	Node* temp = inicio;
 	// for i = 1 to hops
@@ -37,7 +35,7 @@ void LinkedList::imprime(){
 		//temp = temp.sig
 
 	cout << "Alumnos en la lista: " << endl;
-	for (int i = 0; i <= hops ; i++)
+	for (int i = 1; temp != nullptr; i++)
 	{
 		cout << '(' << i << ')'<< ((Alumno*)(temp->getData()))->toString() << endl;
 		temp = temp->getSiguiente();
@@ -147,8 +145,16 @@ Object* LinkedList::suprime(int p){
 		{
 			temp = temp->getSiguiente();
 		}
-		temp->getAnterior()->setSiguiente(temp->getSiguiente());
-		temp->getSiguiente()->setAnterior(temp->getAnterior());
+		if(p != 1)
+			temp->getAnterior()->setSiguiente(temp->getSiguiente());
+		else
+		{
+			inicio = temp->getSiguiente();
+		}
+		
+		if(p != n)
+			temp->getSiguiente()->setAnterior(temp->getAnterior());
+			
 		temp->setAnterior(nullptr);
 		temp->setSiguiente(nullptr);
 
@@ -161,6 +167,7 @@ Object* LinkedList::suprime(int p){
 		return retValue;
 		
 	}
+	cout << "La posicion no es valida, elija una posicion entre " << 1 << "y " << n << endl;
 	return nullptr;
 }
 
@@ -181,30 +188,41 @@ bool LinkedList::inserta(int p,Object* x){
 	//else
 		//return false
 	
-	if (p >=1 && p <= n)
+	if (p >=1 && p <= (n+1))
 	{
 		int hops = p - 1;
 		Node* temp = inicio;
+		Node* anterior = nullptr;
 
 		for (int i = 1; i <= hops; i++)
 		{
+			anterior = temp;
 			temp = temp->getSiguiente();
 		}
 
 		Node* nNode = new Node();
 		nNode->setData(x);
 
-		nNode->setAnterior(temp->getAnterior());
-
-		temp->getAnterior()->setSiguiente(nNode);
+		if(temp != nullptr) {
+			nNode->setAnterior(temp->getAnterior());
+			temp->setAnterior(nNode);
+		}
 		nNode->setSiguiente(temp);
-		temp->setAnterior(nNode);
 
+		if(p == 1)
+			inicio = nNode;
+		else
+		{
+			anterior->setSiguiente(nNode);
+		}
+		
+	
 		n++;
-
 		return true;
 		
 	}
+
+	cout << "La posicion no es valida, elija una posicion entre " << 1 << "y " << (n+1) << endl;
 	return false;
 }
 
