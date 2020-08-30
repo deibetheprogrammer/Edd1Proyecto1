@@ -286,7 +286,7 @@ void arraylist()
 
                 cout << "Que nombre tiene el nuevo alumno ?: ";
                 string nombre;
-                cin >> nombre;
+                getline(cin,nombre);
 
                 cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
                 string cuenta;
@@ -341,8 +341,8 @@ void arraylist()
 
             if (pos != -1)
             {
-                cout << "ALUMNO: " << endl;
-                ((Alumno *)(arrayL->recupera(pos)))->toString();
+                cout << "ALUMNO: " << ((Alumno *)(arrayL->recupera(pos)))->toString() << endl;
+                
                 cout << "POSICION: " << pos << endl;
             }
             else
@@ -657,7 +657,7 @@ void arrayqueue()
 
             cout << "Que nombre tiene el nuevo alumno ?: ";
             string nombre;
-            cin >> nombre;
+            getline(cin,nombre);
 
             cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
             string cuenta;
@@ -773,7 +773,7 @@ void linkedlist()
 
                 cout << "Que nombre tiene el nuevo alumno ?: ";
                 string nombre;
-                cin >> nombre;
+                getline(cin,nombre);
 
                 cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
                 string cuenta;
@@ -828,8 +828,8 @@ void linkedlist()
 
             if (pos != -1)
             {
-                cout << "ALUMNO: " << endl;
-                ((Alumno *)(linkedL->recupera(pos)))->toString();
+                cout << "ALUMNO: " << ((Alumno *)(linkedL->recupera(pos)))->toString() << endl;
+                
                 cout << "POSICION: " << pos << endl;
             }
             else
@@ -1141,7 +1141,7 @@ void linkedqueue() {
 
             cout << "Que nombre tiene el nuevo alumno ?: ";
             string nombre;
-            cin >> nombre;
+            getline(cin,nombre);
 
             cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
             string cuenta;
