@@ -47,7 +47,7 @@ int main()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU PRINCIPAL ***" << endl
              << "----------------------" << endl
              << " [1] Trabajar con Listas" << endl
@@ -64,7 +64,7 @@ int main()
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -102,7 +102,7 @@ void listas()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON LISTAS ***" << endl
              << "----------------------" << endl
              << " [1] Trabajar con ArrayList" << endl
@@ -117,7 +117,7 @@ void listas()
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -150,7 +150,7 @@ void pilas()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON PILAS ***" << endl
              << "----------------------" << endl
              << " [1] Trabajar con ArrayStack" << endl
@@ -165,7 +165,7 @@ void pilas()
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -198,7 +198,7 @@ void colas()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON COLAS ***" << endl
              << "----------------------" << endl
              << " [1] Trabajar con ArrayQueue" << endl
@@ -213,7 +213,7 @@ void colas()
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -248,7 +248,7 @@ void arraylist()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON ARRAYLIST ***" << endl
              << "----------------------" << endl
              << " [1] Insertar elemento" << endl
@@ -271,7 +271,7 @@ void arraylist()
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -286,6 +286,8 @@ void arraylist()
 
                 cout << "Que nombre tiene el nuevo alumno ?: ";
                 string nombre;
+                cin.clear();
+                cin.ignore(100,'\n');
                 getline(cin,nombre);
 
                 cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
@@ -300,7 +302,7 @@ void arraylist()
                 {
                     cin.clear();
                     cin.ignore(100,'\n');
-                    cout << "Ingrese un numero por favor";
+                    cout << "Ingrese un numero por favor: ";
                     cin >> pos;
                 }
 
@@ -363,7 +365,7 @@ void arraylist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -407,7 +409,7 @@ void arraylist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -436,7 +438,7 @@ void arraylist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -465,7 +467,7 @@ void arraylist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -519,7 +521,7 @@ void arraystack()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON ARRAYSTACK ***" << endl
              << "----------------------" << endl
              << " [1] Empujar(push)" << endl
@@ -537,7 +539,7 @@ void arraystack()
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -568,7 +570,7 @@ void arraystack()
             }
             else
             {
-                cout << "La pila esta vacia";
+                cout << "La pila esta vacia" << endl;
             }
 
             break;
@@ -585,7 +587,7 @@ void arraystack()
             }
             else
             {
-                cout << "La pila esta vacia";
+                cout << "La pila esta vacia" << endl;
             }
 
             break;
@@ -594,9 +596,9 @@ void arraystack()
         {
 
             if (arrayS->isEmpty())
-                cout << "La pila esta vacia";
+                cout << "La pila esta vacia" << endl;
             else
-                cout << "La pila no esta vacia";
+                cout << "La pila no esta vacia" << endl;
 
             break;
         }
@@ -628,7 +630,7 @@ void arrayqueue()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON ARRAYQUEUE ***" << endl
              << "----------------------" << endl
              << " [1] Encolar(queue)" << endl
@@ -636,17 +638,17 @@ void arrayqueue()
              << " [3] Ver tope(peek)" << endl
              << " [4] Verificar si esta vacia" << endl
              << " [5] Imprimir elementos" << endl
-             << " [6] Regresar al menu de colas"
+             << " [6] Regresar al menu de colas" << endl
              << "Su eleccion: ";
 
         int choice = 0;
         cin >> choice;
 
-        while (!cin || (choice < 1 || choice > 3))
+        while (!cin || (choice < 1 || choice > 6))
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -657,6 +659,8 @@ void arrayqueue()
 
             cout << "Que nombre tiene el nuevo alumno ?: ";
             string nombre;
+            cin.clear();
+            cin.ignore(100,'\n');
             getline(cin,nombre);
 
             cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
@@ -679,7 +683,7 @@ void arrayqueue()
             }
             else
             {
-                cout << "No hay elementos en la cola";
+                cout << "No hay elementos en la cola" << endl;
             }
 
             break;
@@ -696,26 +700,28 @@ void arrayqueue()
             }
             else
             {
-                cout << "No hay elementos en la cola";
+                cout << "No hay elementos en la cola" << endl;
             }
+            break;
         }
         case 4:
         {
 
             if (arrayQ->vacia())
             {
-                cout << "La cola esta vacia";
+                cout << "La cola esta vacia" << endl;
             }
             else
             {
-                cout << "La cola no esta vacia";
+                cout << "La cola no esta vacia" << endl;
             }
+            break;
         }
         case 5:
         {
-
             cout << "Elementos de la cola: " << endl;
             arrayQ->imprime();
+            break;
         }
         case 6:
         {
@@ -735,7 +741,7 @@ void linkedlist()
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON LINKEDLIST ***" << endl
              << "----------------------" << endl
              << " [1] Insertar elemento" << endl
@@ -758,7 +764,7 @@ void linkedlist()
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -773,6 +779,8 @@ void linkedlist()
 
                 cout << "Que nombre tiene el nuevo alumno ?: ";
                 string nombre;
+                cin.clear();
+                cin.ignore(100,'\n');
                 getline(cin,nombre);
 
                 cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
@@ -787,7 +795,7 @@ void linkedlist()
                 {
                     cin.clear();
                     cin.ignore(100,'\n');
-                    cout << "Ingrese un numero por favor";
+                    cout << "Ingrese un numero por favor: ";
                     cin >> pos;
                 }
 
@@ -850,7 +858,7 @@ void linkedlist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -893,7 +901,7 @@ void linkedlist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -922,7 +930,7 @@ void linkedlist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -951,7 +959,7 @@ void linkedlist()
             {
                 cin.clear();
                 cin.ignore(100,'\n');
-                cout << "Ingrese un numero por favor";
+                cout << "Ingrese un numero por favor: ";
                 cin >> pos;
             }
 
@@ -1004,7 +1012,7 @@ void linkedstack() {
 
     while (loop)
     {
-
+        cout << endl;
         cout << "*** MENU: TRABAJAR CON LINKEDSTACK ***" << endl
              << "----------------------" << endl
              << " [1] Empujar(push)" << endl
@@ -1022,7 +1030,7 @@ void linkedstack() {
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -1053,7 +1061,7 @@ void linkedstack() {
             }
             else
             {
-                cout << "La pila esta vacia";
+                cout << "La pila esta vacia" << endl;
             }
 
             break;
@@ -1070,7 +1078,7 @@ void linkedstack() {
             }
             else
             {
-                cout << "La pila esta vacia";
+                cout << "La pila esta vacia" << endl;
             }
 
             break;
@@ -1079,9 +1087,9 @@ void linkedstack() {
         {
 
             if (linkedS->isEmpty())
-                cout << "La pila esta vacia";
+                cout << "La pila esta vacia" << endl;
             else
-                cout << "La pila no esta vacia";
+                cout << "La pila no esta vacia" << endl;
 
             break;
         }
@@ -1112,25 +1120,25 @@ void linkedqueue() {
 
     while (loop)
     {
-
-        cout << "*** MENU: TRABAJAR CON ARRAYQUEUE ***" << endl
+        cout << endl;
+        cout << "*** MENU: TRABAJAR CON LINKEDQUEUE ***" << endl
              << "----------------------" << endl
              << " [1] Encolar(queue)" << endl
              << " [2] Desencolar(dequeue)" << endl
              << " [3] Ver tope(peek)" << endl
              << " [4] Verificar si esta vacia" << endl
              << " [5] Imprimir elementos" << endl
-             << " [6] Regresar al menu de colas"
+             << " [6] Regresar al menu de colas" << endl
              << "Su eleccion: ";
 
         int choice = 0;
         cin >> choice;
 
-        while (!cin || (choice < 1 || choice > 3))
+        while (!cin || (choice < 1 || choice > 6))
         {
             cin.clear();
             cin.ignore(100,'\n');
-            cout << "Por favor escoja un numero valido";
+            cout << "Por favor escoja un numero valido: ";
             cin >> choice;
         }
 
@@ -1141,6 +1149,8 @@ void linkedqueue() {
 
             cout << "Que nombre tiene el nuevo alumno ?: ";
             string nombre;
+            cin.clear();
+            cin.ignore(100,'\n');
             getline(cin,nombre);
 
             cout << "Que numero de cuenta tiene el nuevo alumno ?: ";
@@ -1163,7 +1173,7 @@ void linkedqueue() {
             }
             else
             {
-                cout << "No hay elementos en la cola";
+                cout << "No hay elementos en la cola" << endl;
             }
 
             break;
@@ -1180,26 +1190,29 @@ void linkedqueue() {
             }
             else
             {
-                cout << "No hay elementos en la cola";
+                cout << "No hay elementos en la cola" << endl;
             }
+            break;
         }
         case 4:
         {
 
             if (linkedQ->vacia())
             {
-                cout << "La cola esta vacia";
+                cout << "La cola esta vacia" << endl;
             }
             else
             {
-                cout << "La cola no esta vacia";
+                cout << "La cola no esta vacia" << endl;
             }
+            break;
         }
         case 5:
         {
 
             cout << "Elementos de la cola: " << endl;
             linkedQ->imprime();
+            break;
         }
         case 6:
         {
