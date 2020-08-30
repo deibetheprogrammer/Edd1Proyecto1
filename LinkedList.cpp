@@ -104,6 +104,7 @@ Object* LinkedList::recupera(int p){
 	}
 	else
 	{
+		cout << "Posicion no valida" << endl;
 		return nullptr;
 	}
 	
@@ -111,10 +112,18 @@ Object* LinkedList::recupera(int p){
 
 
 Object* LinkedList::siguiente(int p) {
-		return recupera(p+1);	
+	if(p == 0) {
+		cout << "Posicion no valida" << endl;
+		return nullptr;
 	}
+	return recupera(p+1);	
+}
 	
 Object* LinkedList::anterior(int p){
+	if(p == n+1) {
+		cout << "Posicion no valida" << endl;
+		return nullptr;
+	}
 	return recupera(p-1);
 }
 
@@ -154,7 +163,7 @@ Object* LinkedList::suprime(int p){
 		
 		if(p != n)
 			temp->getSiguiente()->setAnterior(temp->getAnterior());
-			
+
 		temp->setAnterior(nullptr);
 		temp->setSiguiente(nullptr);
 
@@ -167,7 +176,7 @@ Object* LinkedList::suprime(int p){
 		return retValue;
 		
 	}
-	cout << "La posicion no es valida, elija una posicion entre " << 1 << "y " << n << endl;
+	cout << "La posicion no es valida, elija una posicion entre " << 1 << " y " << n << endl;
 	return nullptr;
 }
 
@@ -204,7 +213,6 @@ bool LinkedList::inserta(int p,Object* x){
 		nNode->setData(x);
 
 		if(temp != nullptr) {
-			nNode->setAnterior(temp->getAnterior());
 			temp->setAnterior(nNode);
 		}
 		nNode->setSiguiente(temp);
@@ -215,14 +223,14 @@ bool LinkedList::inserta(int p,Object* x){
 		{
 			anterior->setSiguiente(nNode);
 		}
-		
+		nNode->setAnterior(anterior);
 	
 		n++;
 		return true;
 		
 	}
 
-	cout << "La posicion no es valida, elija una posicion entre " << 1 << "y " << (n+1) << endl;
+	cout << "La posicion no es valida, elija una posicion entre " << 1 << " y " << (n+1) << endl;
 	return false;
 }
 
