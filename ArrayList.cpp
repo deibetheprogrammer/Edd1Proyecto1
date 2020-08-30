@@ -80,8 +80,8 @@ Object* ArrayList::recupera(int p){
 }
 
 Object* ArrayList::siguiente(int p){
-	if((p+1) < 1 || (p+1) > (n-1)) {
-        cout << "Posicion invalida, por favor ingrese una posicion"
+	if(p < 1 || (p+1) > n) {
+        cout << "Posicion invalida, por favor ingrese una posicion "
              << "entre 1 y " << (n-1) << endl;
         return nullptr;
     }
@@ -89,9 +89,9 @@ Object* ArrayList::siguiente(int p){
 }
 
 Object* ArrayList::anterior(int p){
-	if((p-1) < 1 || (p-1) > n) {
-        cout << "Posicion invalida, por favor ingrese una posicion"
-             << "entre 1 y " << (n-1) << endl;
+	if(p < 2 || p > n) {
+        cout << "Posicion invalida, por favor ingrese una posicion "
+             << "entre 2 y " << n << endl;
         return nullptr;
     }
 	return recupera((p-1));
