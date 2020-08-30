@@ -72,7 +72,10 @@ Object* LinkedStack::pop(){
 	{
 		Node* temp = tope;
 		tope = tope->getSiguiente();
-		tope->setAnterior(nullptr);
+		if (tope != nullptr)
+		{
+			tope->setAnterior(nullptr);
+		}
 		temp->setSiguiente(nullptr);
 		Object* retValue = temp->getData();
 		temp->setData(nullptr);
