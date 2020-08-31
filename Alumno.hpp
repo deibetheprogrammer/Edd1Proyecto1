@@ -16,21 +16,28 @@ class Alumno : public Object
         Alumno(string nombre,string cuenta);
 
         //MUTADORES
+
+        //Obtiene la cuenta del alumno
         string getCuenta();
 
+        //Obtiene el nombre del alumno
         string getNombre();
 
         //METODOS
+
+        //Devuelve el nombre y la cuenta del alumno en un string
         virtual string toString();
 
-        virtual bool equals(Object* x);
+        //Indica si el elemento comparado es el mismo alumno
+        virtual bool equals(Object* other);
 
         //DESTRUCTOR
         ~Alumno();
         
     private:
-
+        //Numero de cuenta del alumno
         string cuenta;
+        //Nombre del alumno
         string nombre;
 };
 

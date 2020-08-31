@@ -18,20 +18,25 @@ class Simbolo : public Object
 
         //MUTADORES
         
+        //Devuelve el simbolo
         char getSimbolo();
         
+        //Modifca el simbolo
         void setSimbolo(char simbolo);
 
         //METODOS
 
+        //Devuelve una version en string del simbolo
         virtual string toString();
 
+        //Verifica si el objeto pasado es el mismo simbolo
         virtual bool equals(Object* x);
 
     private: 
 
         //ATRIBUTOS
 
+        //Es el simbolo
         char simbolo;
 
 

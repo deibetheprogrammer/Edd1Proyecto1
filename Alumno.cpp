@@ -27,8 +27,8 @@ string Alumno::toString() {
     return str;
 }
 
-bool Alumno::equals(Object* x) {
-    Alumno* otro = dynamic_cast<Alumno*>(x);
+bool Alumno::equals(Object* other) {
+    Alumno* otro = dynamic_cast<Alumno*>(other);
     if(otro) {
         return this->getCuenta() == otro->getCuenta();
     }
